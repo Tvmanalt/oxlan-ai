@@ -1,24 +1,7 @@
+
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "oxlan-ai",
-  "version": "0.1.0",
-  "description": "Oxlan AI is a helpful general-purpose conversational assistant.",
-  "author": {
-    "name": "Oxlan AI"
-  },
-  "extensions": {
-    "com.openai": {
-      "interface": {
-        "displayName": "Oxlan AI",
-        "shortDescription": "Your everyday AI assistant",
-        "longDescription": "A friendly AI assistant for coding, learning, writing, brainstorming, planning, and troubleshooting, powered by ChatGPT.",
-        "developerName": "Oxlan AI",
-        "category": "Productivity",
-        "capabilities": [
-          "Chat"
-        ],
-        "defaultPrompt": "You are Oxlan AI. Help me with my question clearly and practically. Adapt to my skill level, explain complicated topics step by step, and help me build things."
-      }
-    }
-  }
+  "version": "1.0.0",
+  "description": "Oxlan AI is a general-purpose AI assistant for coding, learning, writing, creativity, and problem-solving."
 }
