@@ -1,0 +1,44 @@
+
+name: Build Oxlan AI Package
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "plugin.json"
+      - "skills/**"
+      - ".github/workflows/build.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate plugin files
+        run: |
+          test -f plugin.json
+          test -f skills/oxlan-chat/SKILL.md
+          python -m json.tool plugin.json > /dev/null
+
+      - name: Package Oxlan AI
+        run: |
+          mkdir -p dist
+          zip -r dist/oxlan-ai.zip \
+            plugin.json \
+            skills/
+
+      - name: Upload ZIP package
+        uses: actions/upload-artifact@v4
+        with:
+          name: oxlan-ai-package
+          path: dist/oxlan-ai.zip
+          if-no-files-found: error
+          retention-days: 30
