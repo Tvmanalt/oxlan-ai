@@ -1,0 +1,6 @@
+{
+  "name": "oxlan-ai",
+  "version": "1.0.0",
+  "description": "Oxlan AI is a general-purpose AI assistant for coding, learning, writing, creativity, and problem-solving.",
+  "skills": "./skills/"
+}
